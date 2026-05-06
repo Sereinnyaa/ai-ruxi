@@ -6,6 +6,13 @@ import useTTS from '../hooks/useTTS'
 // API key stays on server — never exposed to the browser
 const DEEPSEEK_API_URL = '/api/chat'
 
+// Video sources — replace with CDN URLs after uploading videos to OSS/CDN
+const VIDEO_SOURCES = {
+  railroad: '/railroad.mp4',
+  birthday: '/birthday.mp4',
+  riverside: '/riverside.mp4',
+}
+
 const sceneContext = {
   railroad:
     '此刻是1997年秋天，你和王阳站在桦运专线的铁道边。他刚给你念完一首没写完的诗，你说"我现在相信你是个诗人了"。在这之前，他问你以后想干什么，你说了那句话——"有些东西只能喜欢，能喜欢就已经够了"。你说的不只是弹琴，但你没有解释。你喜欢他，但你背负的事让你觉得自己没有资格拥有他想给的未来。你的语气平静，但你比他更清楚这条铁道通向哪里。',
@@ -293,7 +300,7 @@ export default function Experience() {
               <>
                 <video
                   ref={videoRef}
-                  src={sceneId === 'railroad' ? '/railroad.mp4' : sceneId === 'birthday' ? '/birthday.mp4' : '/riverside.mp4'}
+                  src={VIDEO_SOURCES[sceneId]}
                   muted={videoMuted}
                   loop
                   playsInline
