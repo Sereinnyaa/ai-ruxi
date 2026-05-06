@@ -305,7 +305,7 @@ export default function Experience() {
                   loop
                   playsInline
                   autoPlay
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-contain"
                 />
                 {/* Sound toggle button */}
                 <button
